@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import { Poppins } from 'next/font/google'
-import Footer from '@components/Footer/Footer'
+import Footer from '@components/Footer'
+import Nav from '@components/Nav'
 const poppin = Poppins({
 	weight: '400',
 	subsets: ['latin'],
@@ -16,8 +17,8 @@ export default function Home() {
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
 			<main className={poppin.className}>
-				<p className={'title'}>Hello world</p>
-				<Footer />
+				<Nav />
+				{/* <Footer /> */}
 			</main>
 		</>
 	)
