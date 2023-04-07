@@ -2,16 +2,28 @@ import Head from 'next/head'
 import { Poppins } from 'next/font/google'
 import Footer from '@components/Footer'
 import Nav from '@components/Nav'
-import Card from '@components/Card'
+import BlogPreview from '@components/BlogPreview'
 import { Container, Grid } from '@nextui-org/react'
 import { list } from '../mock/blogList'
+import { getAllPosts } from '../lib/blog-api'
+import { HomeProps } from '../types'
 
 const poppin = Poppins({
 	weight: '400',
 	subsets: ['latin'],
 })
 
-export default function Home() {
+export const getStaticProps = async () => {
+	const postList = await getAllPosts()
+	return {
+		props: {
+			posts: postList,
+		},
+	}
+}
+
+export default function Home({ posts }: HomeProps) {
+	console.log('posts', posts)
 	return (
 		<>
 			<Head>
@@ -24,16 +36,17 @@ export default function Home() {
 				<Nav />
 				<Container md>
 					<Grid.Container gap={2}>
-						{list.map((item) => {
+						{posts.map((item) => {
 							return (
-								<Grid key={item.title} xs={12} sm={6} md={4}>
-									<Card />
+								<Grid key={item.slug} xs={12} sm={6} md={4}>
+									<BlogPreview blogData={item.data} />
 								</Grid>
 							)
 						})}
 					</Grid.Container>
-					{/* <Footer /> */}
 				</Container>
+
+				{/* <Footer /> */}
 			</main>
 		</>
 	)
