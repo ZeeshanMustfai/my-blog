@@ -2,6 +2,10 @@ import Head from 'next/head'
 import { Poppins } from 'next/font/google'
 import Footer from '@components/Footer'
 import Nav from '@components/Nav'
+import Card from '@components/Card'
+import { Container, Grid } from '@nextui-org/react'
+import { list } from '../mock/blogList'
+
 const poppin = Poppins({
 	weight: '400',
 	subsets: ['latin'],
@@ -18,7 +22,18 @@ export default function Home() {
 			</Head>
 			<main className={poppin.className}>
 				<Nav />
-				{/* <Footer /> */}
+				<Container md>
+					<Grid.Container gap={2}>
+						{list.map((item) => {
+							return (
+								<Grid key={item.title} xs={12} sm={6} md={4}>
+									<Card />
+								</Grid>
+							)
+						})}
+					</Grid.Container>
+					{/* <Footer /> */}
+				</Container>
 			</main>
 		</>
 	)

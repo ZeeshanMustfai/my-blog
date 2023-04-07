@@ -2,7 +2,6 @@ import React from 'react'
 import { Navbar, Button, Text } from '@nextui-org/react'
 import { useRouter } from 'next/router'
 import { navItems } from '../mock/navItems'
-import Link from 'next/link'
 import styles from '@styles/navbar.module.scss'
 interface NavItemProps {
 	id: string
@@ -40,7 +39,7 @@ const mobileNavItem = () => {
 const Nav = () => {
 	const router = useRouter()
 	return (
-		<Navbar variant='sticky'>
+		<Navbar variant='sticky' maxWidth={'md'}>
 			<Navbar.Toggle showIn='sm' />
 			<Navbar.Brand>
 				<Text color='primary' size={'$2xl'}>
@@ -62,10 +61,11 @@ const Nav = () => {
 					auto
 					color={'primary'}
 					className={styles.signIn}
+					shadow
 				>
 					Login
 				</Button>
-				<Button animated rounded auto color={'secondary'}>
+				<Button animated rounded auto color={'secondary'} shadow bordered>
 					SignUp
 				</Button>
 			</Navbar.Content>
