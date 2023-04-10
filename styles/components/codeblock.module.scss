@@ -1,0 +1,25 @@
+.mainCodeBlock { 
+display: flex;
+align-items: flex-start;
+flex-direction: column;
+
+pre{
+  // background: var(--black);
+  width: 100%;
+
+  code{
+    color: var(--white);
+    background: none;
+  }
+}
+.clipboard{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10 0;
+}
+.clipboardBtn{
+  margin-right: 5px;
+}
+}

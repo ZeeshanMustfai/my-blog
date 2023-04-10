@@ -4,14 +4,14 @@ export const navItems = [
 		path: '/blog',
 		name: 'Blog',
 	},
-	{
-		id: 'skills-key',
-		path: '/skills',
-		name: 'Skills',
-	},
-  {
-		id: 'about-key',
-		path: '/about',
-		name: 'About Me',
-	},	
+	// {
+	// 	id: 'skills-key',
+	// 	path: '/skills',
+	// 	name: 'Skills',
+	// },
+  // {
+	// 	id: 'about-key',
+	// 	path: '/about',
+	// 	name: 'About Me',
+	// },	
 ]

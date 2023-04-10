@@ -66,3 +66,13 @@ export const theme = createTheme({
     },
   }
 })
+
+
+export const darkTheme = createTheme({
+  type: 'dark',
+  theme: {
+    colors : {
+      
+    }
+  }
+})

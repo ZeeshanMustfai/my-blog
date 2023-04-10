@@ -1,11 +1,15 @@
 export interface BlogMetaData {
 	title: string
-	subTitle: string
+	subTitle?: string
 	description: string
 	date: string
 	banner: string
 	tags: string[]
+	content?:string
+	slug?: string
 }
+
+
 interface BlogDetailProps {
 	content: string
 	slug: string
