@@ -1,9 +1,11 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Navbar, Text, useTheme } from '@nextui-org/react'
 import { useRouter } from 'next/router'
 import { FaRegMoon, FaSun } from 'react-icons/fa'
 import { navItems } from '../mock/navItems'
 import styles from '@styles/navbar.module.scss'
+import { MainContext } from '../pages/_app'
+import { Theme, ThemeContextType } from '../types'
 interface NavItemProps {
 	id: string
 	path: string
@@ -33,13 +35,11 @@ const mobileNavItem = () => {
 		</>
 	)
 }
+
 const Nav = () => {
 	const router = useRouter()
-	const theme = useTheme()
-	const [isDark, setDark] = useState(false)
-	const handleTheme = () => {
-		setDark(!isDark)
-	}
+	const { theme, changeTheme } = useContext<ThemeContextType>(MainContext)
+
 	return (
 		<Navbar variant='sticky' maxWidth={'md'} disableBlur={true}>
 			<Navbar.Toggle showIn='sm' />
@@ -56,8 +56,12 @@ const Nav = () => {
 			>
 				{renderNavItem()}
 			</Navbar.Content>
-			<Navbar.Content className='icon' onClick={handleTheme}>
-				{isDark ? <FaSun /> : <FaRegMoon />}
+			<Navbar.Content className='icon'>
+				{theme === 'light' ? (
+					<FaRegMoon onClick={() => changeTheme('dark')} />
+				) : (
+					<FaSun onClick={() => changeTheme('light')} />
+				)}
 			</Navbar.Content>
 			<Navbar.Collapse>{mobileNavItem()}</Navbar.Collapse>
 		</Navbar>

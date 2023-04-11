@@ -1,6 +1,6 @@
 import { createTheme } from "@nextui-org/react";
 
-export const theme = createTheme({
+export const lightTheme = createTheme({
   type: 'light',
   theme: {
     colors:{
@@ -72,7 +72,13 @@ export const darkTheme = createTheme({
   type: 'dark',
   theme: {
     colors : {
-      
+      white: "#ffffff",
+      black: "#000000",
+      primary: "#F594C9",
+      secondary: "#2CC9D5",
+      gradient:
+        "transparent linear-gradient(151deg, #FCF3F9 0%, #EAF8FB 100%) 0% 0% no-repeat padding-box",
+      link: "#2CC9D5",
     }
   }
 })
