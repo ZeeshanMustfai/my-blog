@@ -41,12 +41,7 @@ const Nav = () => {
 		setDark(!isDark)
 	}
 	return (
-		<Navbar
-			variant='sticky'
-			maxWidth={'md'}
-			css={{ bgColor: 'Black' }}
-			disableBlur={true}
-		>
+		<Navbar variant='sticky' maxWidth={'md'} disableBlur={true}>
 			<Navbar.Toggle showIn='sm' />
 			<Navbar.Brand className={styles.brand} onClick={() => router.push('/')}>
 				<Text color='primary' size={'$2xl'} css={{ fontWeight: '900' }}>

@@ -1,9 +1,9 @@
-import './../styles/globals.scss'
-import '../styles/components/prism-dracula.scss'
 import type { AppProps } from 'next/app'
 import { NextUIProvider } from '@nextui-org/react'
-import { theme } from '../theme/lightTheme'
+import { theme } from '../theme/theme'
 import Layout from '../layout'
+import './../styles/globals.scss'
+import '../styles/components/prism-dracula.scss'
 
 export default function App({ Component, pageProps }: AppProps) {
 	return (
