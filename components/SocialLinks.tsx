@@ -3,7 +3,6 @@ import {
 	FaGithubSquare,
 	FaMedium,
 	FaStackOverflow,
-	FaYoutube,
 } from 'react-icons/fa'
 import styles from '@styles/footer.module.scss'
 import { useTheme } from '@nextui-org/react'
